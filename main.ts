@@ -3,6 +3,9 @@ music.onEvent(MusicEvent.BackgroundMelodyEnded, function () {
     basic.pause(1000)
     wuKong.stopAllMotor()
 })
+datalogger.onLogFull(function () {
+    datalogger.deleteLog(datalogger.DeleteType.Fast)
+})
 input.onButtonPressed(Button.A, function () {
     sonar2 = cm_sonarbit()
     basic.showNumber(sonar2)
